@@ -19,7 +19,7 @@ export default defineConfig(() => {
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
       proxy: {
         '/api': {
-          target: process.env.VITE_API_PROXY_TARGET ?? 'http://localhost:8000',
+          target: process.env.VITE_API_PROXY_TARGET ?? 'https://mednexus360.onrender.com/',
           changeOrigin: true,
           rewrite: (requestPath) => requestPath.replace(/^\/api/, ''),
         },
