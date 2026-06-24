@@ -6,7 +6,7 @@ from app.core.config import settings
 
 
 GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODEL = "llama-3.3-70b-instant"
+GROQ_MODEL = "llama-3.1-8b-instant"
 
 
 def _create_chat_completion(
