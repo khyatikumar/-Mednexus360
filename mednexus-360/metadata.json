@@ -1,0 +1,8 @@
+{
+  "name": "MedNexus 360",
+  "description": "An advanced clinical intelligence suite and dashboard for hospital administration, clinicians, and predictive diagnostics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
