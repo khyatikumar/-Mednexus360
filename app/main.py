@@ -61,20 +61,16 @@ app = FastAPI(
 from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
-    # CORSMiddleware,
-    # allow_origins=[
-    #     "https://mednexus360.vercel.app",
-    #     "http://localhost:5173"
-    # ],
-    # allow_credentials=True,
-    # allow_methods=["*"],
-    # allow_headers=["*"],
-    
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=[
+        "https://mednexus360.vercel.app",
+        "http://localhost:5173"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    
+
 )
 from app.core.logger import logger
 
