@@ -22,8 +22,8 @@ export default function AnalyticsPage() {
       {/* Page Header */}
       <div className="flex justify-between items-center flex-wrap gap-4">
         <div>
-          <h2 className="text-3xl font-bold text-[#0b1c30] tracking-tight font-sans">Clinical Intelligence Metrics</h2>
-          <p className="text-sm text-[#45464d]">Deconstruct inpatient logs, department allocations, and staffing effectiveness rates.</p>
+          <h2 className="text-3xl font-bold text-[#0b1c30] tracking-tight font-sans">Clinical Performance Metrics</h2>
+          <p className="text-sm text-[#45464d]">Review patient volume, care capacity, and staffing effectiveness across departments.</p>
         </div>
         <div className="flex bg-[#eff4ff] p-1 rounded-lg border border-[#c6c6cd]">
           {['Departmental', 'Vitals', 'Resource'].map((item) => (
@@ -127,7 +127,7 @@ export default function AnalyticsPage() {
           )}
 
           <div className="flex justify-between text-xs text-[#45464d] font-semibold mt-4">
-            <span>Clinical Intelligence Engine v360.2</span>
+            <span>Clinical operations summary</span>
             <span>Refreshed: 14s ago</span>
           </div>
         </section>

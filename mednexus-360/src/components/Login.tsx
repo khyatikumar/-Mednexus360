@@ -66,11 +66,11 @@ export default function Login({ onAuthenticated }: LoginProps) {
           <div>
             <h1 className="text-5xl font-bold leading-tight">Secure care operations, connected.</h1>
             <p className="mt-5 text-sm leading-7 text-[#dce9ff]">
-              Sign in with a backend-issued JWT to manage patients, doctors, appointments,
-              medical records, reports, notifications, and AI-assisted care workflows.
+              Sign in to coordinate patient visits, clinician schedules, medical records,
+              reports, notifications, and guided care support in one secure place.
             </p>
           </div>
-          <p className="text-xs text-[#dce9ff]/70">FastAPI backend source of truth</p>
+          <p className="text-xs text-[#dce9ff]/70">Trusted care coordination for modern clinics</p>
         </div>
       </section>
 
@@ -85,7 +85,7 @@ export default function Login({ onAuthenticated }: LoginProps) {
               {mode === 'login' ? 'Welcome Back' : 'Create Account'}
             </h2>
             <p className="text-sm text-[#45464d] mt-2">
-              {mode === 'login' ? 'Use your registered credentials.' : 'Register against the FastAPI auth endpoint.'}
+              {mode === 'login' ? 'Access your secure care workspace.' : 'Create a secure profile for your care role.'}
             </p>
           </header>
 

@@ -62,7 +62,7 @@ export default function PatientsPage({
     setSuccess(null);
 
     if (!editingId && !canCreate) {
-      setError('Only patient users can create patient profiles in the current backend RBAC.');
+      setError('Only patients can create their own profile from this screen.');
       return;
     }
 
@@ -124,7 +124,7 @@ export default function PatientsPage({
     <div className="space-y-6">
       <header>
         <h2 className="text-3xl font-bold">Patients</h2>
-        <p className="text-sm text-[#45464d]">Live data from `/patients/`.</p>
+        <p className="text-sm text-[#45464d]">View patient profiles, emergency contacts, and key care details in one registry.</p>
       </header>
 
       <Status error={error} success={success} />

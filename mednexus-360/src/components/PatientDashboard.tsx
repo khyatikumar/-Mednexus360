@@ -185,7 +185,7 @@ export default function PatientDashboard({
               <h3 className="text-lg font-bold text-[#0b1c30]">Recent Medical Records</h3>
               <button 
                 onClick={() => {
-                  alert("Preparing complete encrypted clinical records ZIP... Download started!");
+                  alert("Preparing your complete clinical records download.");
                 }}
                 className="text-[#45464d] hover:text-[#0b1c30] text-xs font-bold cursor-pointer hover:underline"
               >
@@ -375,7 +375,7 @@ export default function PatientDashboard({
             <div className="p-6 border-b border-white/10 flex justify-between items-center">
               <div className="flex items-center gap-3">
                 <span className="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
-                <h3 className="text-base font-bold">Clinical Care Session (Encrypted Room)</h3>
+                <h3 className="text-base font-bold">Clinical Care Session</h3>
               </div>
               <p className="text-xs text-white/60">Partner ID: {telehealthCall.id}</p>
             </div>
@@ -404,7 +404,7 @@ export default function PatientDashboard({
             <div className="p-6 flex flex-col md:flex-row items-center justify-between gap-4 bg-[#131b2e] border-t border-white/10">
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-[#6ffbbe]">shield_with_heart</span>
-                <span className="text-xs text-white/80">AES-256 peer-to-peer session completely HIPAA-compliant.</span>
+                <span className="text-xs text-white/80">Private telehealth room for your care conversation.</span>
               </div>
               
               <div className="flex items-center gap-2">

@@ -62,7 +62,7 @@ export default function ReportsPage() {
     <div className="space-y-6">
       <header>
         <h2 className="text-3xl font-bold">Reports</h2>
-        <p className="text-sm text-[#45464d]">Multipart PDF upload and report listing from `/reports`.</p>
+        <p className="text-sm text-[#45464d]">Upload and review patient lab reports, scans, and discharge summaries as PDF files.</p>
       </header>
       {(error || success) && <div className={`p-3 rounded-lg border text-sm font-semibold ${error ? 'bg-red-50 border-red-200 text-red-700' : 'bg-emerald-50 border-emerald-200 text-emerald-800'}`}>{error ?? success}</div>}
 
@@ -91,10 +91,10 @@ export default function ReportsPage() {
             <h3 className="font-bold mt-1 break-words">{report.report_name}</h3>
             <p className="text-sm text-[#45464d] mt-2">Uploaded {new Date(report.uploaded_at).toLocaleString()}</p>
             <p className="mt-4 text-xs font-bold text-[#0051d5] break-words">
-              Stored path: {report.file_path}
+              Secure file reference: {report.file_path}
             </p>
             <p className="mt-1 text-[11px] text-[#45464d]">
-              The backend exposes upload and listing APIs, but no download route is currently mounted.
+              Download access is not available for this report yet.
             </p>
           </article>
         ))}

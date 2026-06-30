@@ -40,8 +40,8 @@ export default function SymptomChecker() {
   return (
     <div className="space-y-6">
       <header>
-        <h2 className="text-3xl font-bold">AI Tools</h2>
-        <p className="text-sm text-[#45464d]">Calls `/symptom-checker/` and `/doctor-recommendation/` with the same symptom text.</p>
+        <h2 className="text-3xl font-bold">Care Guidance</h2>
+        <p className="text-sm text-[#45464d]">Describe symptoms in plain language and receive triage guidance with a suitable specialist match.</p>
       </header>
 
       <section className="bg-white border border-[#c6c6cd] rounded-lg p-5">
@@ -99,12 +99,12 @@ export default function SymptomChecker() {
                 <div className="mt-3 space-y-3">
                   {recommendation.doctors.length ? recommendation.doctors.map((doctor) => (
                     <div key={doctor.id} className="p-3 rounded-lg bg-[#f8f9ff] border border-[#c6c6cd]">
-                      <p className="font-bold">Doctor #{doctor.id}</p>
-                      <p className="text-sm text-[#45464d]">{doctor.specialization} · {doctor.experience_years} years experience</p>
+                      <p className="font-bold">Care Specialist #{doctor.id}</p>
+                      <p className="text-sm text-[#45464d]">{doctor.specialization} | {doctor.experience_years} years experience</p>
                       <p className="text-xs text-emerald-700 font-bold mt-2">Availability: check appointments module</p>
                     </div>
                   )) : (
-                    <p className="text-sm text-[#45464d]">No matching doctors returned by the backend.</p>
+                    <p className="text-sm text-[#45464d]">No matching clinicians are available for these symptoms yet.</p>
                   )}
                 </div>
               </div>

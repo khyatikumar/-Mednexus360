@@ -9,23 +9,23 @@ export default function SettingsPage() {
   const [allowNotifications, setAllowNotifications] = useState(true);
   const [twoFactor, setTwoFactor] = useState(true);
   const [dataSync, setDataSync] = useState(true);
-  const [retentionLevel, setRetentionLevel] = useState('7 Years (HIPAA Standard)');
+  const [retentionLevel, setRetentionLevel] = useState('7 Years (Standard Retention)');
 
   const handleClearCache = () => {
-    alert("Local system memory cache cleared successfully! Re-syncing database profiles from server...");
+    alert("Local workspace data cleared successfully. Your care profile will refresh on the next sync.");
   };
 
   const handleSaveSettings = (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Clinical configuration parameters successfully persistent side-set!");
+    alert("Clinical preferences saved successfully.");
   };
 
   return (
     <div className="space-y-6 text-left max-w-2xl mx-auto bg-white p-6 sm:p-8 rounded-2xl border border-[#c6c6cd] shadow-sm">
       {/* Settings Header */}
       <div className="border-b border-[#c6c6cd] pb-4">
-        <h2 className="text-2xl font-bold text-[#0b1c30] tracking-tight">System Settings</h2>
-        <p className="text-xs text-[#45464d] mt-1">Configure HIPAA guidelines, emergency alert tickers, and offline local cache sync options.</p>
+        <h2 className="text-2xl font-bold text-[#0b1c30] tracking-tight">Care Preferences</h2>
+        <p className="text-xs text-[#45464d] mt-1">Manage alerts, sign-in protection, data sharing, and record retention preferences.</p>
       </div>
 
       <form onSubmit={handleSaveSettings} className="space-y-6">
@@ -71,7 +71,7 @@ export default function SettingsPage() {
         <div className="flex items-center justify-between pb-4 border-b border-[#c6c6cd]">
           <div>
             <h3 className="text-sm font-bold text-[#0b1c30]">Durable State Synchronization</h3>
-            <p className="text-[11px] text-[#45464d] mt-0.5">Automated synchronization with secondary offline database triggers when signal fluctuates.</p>
+            <p className="text-[11px] text-[#45464d] mt-0.5">Keep recent care information available when connectivity is unstable.</p>
           </div>
           <button
             type="button"
@@ -94,25 +94,25 @@ export default function SettingsPage() {
             onChange={(e) => setRetentionLevel(e.target.value)}
             className="w-full text-xs h-10 p-2 border border-[#c6c6cd] rounded-lg focus:ring-2 focus:ring-[#0051d5] bg-[#f8f9ff]"
           >
-            <option>7 Years (HIPAA Standard)</option>
+            <option>7 Years (Standard Retention)</option>
             <option>10 Years (Extended Case Studies)</option>
-            <option>Indefinite Retention (Allied Cloud Archive)</option>
+            <option>Indefinite Retention (Lifetime Care Archive)</option>
           </select>
-          <p className="text-[10px] text-[#76777d] mt-1 font-semibold">Retention levels modify secondary backup database encryption schemes.</p>
+          <p className="text-[10px] text-[#76777d] mt-1 font-semibold">Retention choices determine how long clinical history remains available.</p>
         </div>
 
-        {/* Clear and system parameters */}
+        {/* Clear local workspace data */}
         <div className="p-4 bg-red-50 border border-red-200 rounded-xl space-y-3">
           <h4 className="text-xs font-bold text-red-900 uppercase">Emergency Safety Zone</h4>
           <p className="text-[11px] text-red-800 leading-normal">
-            Clearing system cache forces local database sync and resets active professional credentials sessions side-wide. Use during IT maintenance.
+            Clearing local workspace data signs out active sessions and refreshes saved care information. Use this on shared devices.
           </p>
           <button
             type="button"
             onClick={handleClearCache}
             className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded font-bold text-xs cursor-pointer transition-colors"
           >
-            Reset Active Cache Memory
+            Clear Local Workspace
           </button>
         </div>
 
@@ -121,7 +121,7 @@ export default function SettingsPage() {
           <button
             type="button"
             className="px-4 py-2 bg-white hover:bg-[#eff4ff] border border-[#c6c6cd] text-xs font-bold rounded-lg cursor-pointer text-[#45464d]"
-            onClick={() => alert("Discarding settings modifications...")}
+            onClick={() => alert("Discarding preference changes...")}
           >
             Cancel
           </button>
@@ -129,7 +129,7 @@ export default function SettingsPage() {
             type="submit"
             className="px-5 py-2 bg-[#0051d5] text-white hover:bg-[#00174b] text-xs font-bold rounded-lg cursor-pointer transition-colors"
           >
-            Save Configuration
+            Save Preferences
           </button>
         </div>
       </form>

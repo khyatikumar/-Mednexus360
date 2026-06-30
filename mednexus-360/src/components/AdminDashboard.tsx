@@ -66,13 +66,13 @@ export default function AdminDashboard({
     setLocalStaff(updated);
     onStaffUpdate(updated);
     setEditingStaff(null);
-    showToast("Staff metadata updated client-side!");
+    showToast("Staff profile updated successfully!");
   };
 
   const handleCreateStaff = (e: React.FormEvent) => {
     e.preventDefault();
     if (!newStaffName || !newStaffEmail) {
-      alert("Name and email are required parameters.");
+      alert("Name and email are required.");
       return;
     }
 
@@ -235,9 +235,9 @@ export default function AdminDashboard({
           </div>
         </div>
 
-        {/* System Activity Log (4 Columns) */}
+        {/* Care Activity Log (4 Columns) */}
         <div className="col-span-12 lg:col-span-4 bg-white p-5 rounded-xl border border-[#c6c6cd] flex flex-col shadow-sm">
-          <h4 className="text-base font-bold text-[#0b1c30] mb-4">System Activity Log</h4>
+          <h4 className="text-base font-bold text-[#0b1c30] mb-4">Care Activity Log</h4>
           
           <div className="space-y-4 flex-grow overflow-y-auto max-h-[300px] pr-1">
             {logs.map((log) => {
@@ -340,7 +340,7 @@ export default function AdminDashboard({
                       <button 
                         onClick={() => handleOpenEdit(member)}
                         className="p-1 hover:bg-[#cbdbf5] rounded-full text-[#0051d5] cursor-pointer"
-                        title="Edit member parameters"
+                        title="Edit staff profile"
                       >
                         <span className="material-symbols-outlined text-sm">edit</span>
                       </button>
@@ -367,7 +367,7 @@ export default function AdminDashboard({
 
           <div className="p-4 flex justify-center border-t border-[#c6c6cd]">
             <button 
-              onClick={() => alert("Loading full corporate clinic personnel registry database... Authorized operations only.")}
+              onClick={() => alert("Opening the complete clinical staff roster.")}
               className="text-[#0051d5] font-bold text-xs hover:underline cursor-pointer"
             >
               See all staff members
@@ -467,7 +467,7 @@ export default function AdminDashboard({
                     <option>Head Nurse</option>
                     <option>Generalist Cardiologist</option>
                     <option>Dermatologist Pro</option>
-                    <option>IT Administrator</option>
+                    <option>Operations Coordinator</option>
                   </select>
                 </div>
                 <div>

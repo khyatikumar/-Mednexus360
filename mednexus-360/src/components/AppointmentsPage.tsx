@@ -90,7 +90,7 @@ export default function AppointmentsPage() {
     <div className="space-y-6">
       <header>
         <h2 className="text-3xl font-bold">Appointments</h2>
-        <p className="text-sm text-[#45464d]">Create, list, cancel, and complete appointments using `/appointments`.</p>
+        <p className="text-sm text-[#45464d]">Schedule consultations, track visit status, and keep care teams aligned.</p>
       </header>
 
       {(error || success) && <div className={`p-3 rounded-lg border text-sm font-semibold ${error ? 'bg-red-50 border-red-200 text-red-700' : 'bg-emerald-50 border-emerald-200 text-emerald-800'}`}>{error ?? success}</div>}
@@ -101,14 +101,14 @@ export default function AppointmentsPage() {
             Patient
             <select value={form.patient_id || ''} onChange={(event) => setForm({ ...form, patient_id: Number(event.target.value) })} className="mt-1 w-full h-10 px-3 rounded-lg border border-[#c6c6cd] text-sm" required>
               <option value="">Select patient</option>
-              {patients.map((patient) => <option key={patient.id} value={patient.id}>#{patient.id} · user {patient.user_id}</option>)}
+              {patients.map((patient) => <option key={patient.id} value={patient.id}>Patient #{patient.id} | profile {patient.user_id}</option>)}
             </select>
           </label>
           <label className="text-xs font-bold text-[#45464d]">
             Doctor
             <select value={form.doctor_id || ''} onChange={(event) => setForm({ ...form, doctor_id: Number(event.target.value) })} className="mt-1 w-full h-10 px-3 rounded-lg border border-[#c6c6cd] text-sm" required>
               <option value="">Select doctor</option>
-              {doctors.map((doctor) => <option key={doctor.id} value={doctor.id}>#{doctor.id} · {doctor.specialization}</option>)}
+              {doctors.map((doctor) => <option key={doctor.id} value={doctor.id}>Doctor #{doctor.id} | {doctor.specialization}</option>)}
             </select>
           </label>
           <label className="text-xs font-bold text-[#45464d]">

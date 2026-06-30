@@ -70,7 +70,7 @@ export default function MedicalRecordsPage() {
     <div className="space-y-6">
       <header>
         <h2 className="text-3xl font-bold">Medical Records</h2>
-        <p className="text-sm text-[#45464d]">Live record creation and patient history from `/medical-records/`.</p>
+        <p className="text-sm text-[#45464d]">Create clear clinical notes and review each patient's medical history.</p>
       </header>
       {(error || success) && <div className={`p-3 rounded-lg border text-sm font-semibold ${error ? 'bg-red-50 border-red-200 text-red-700' : 'bg-emerald-50 border-emerald-200 text-emerald-800'}`}>{error ?? success}</div>}
       <div className="grid xl:grid-cols-[380px_1fr_380px] gap-6">
@@ -83,7 +83,7 @@ export default function MedicalRecordsPage() {
               {records.map((record) => (
                 <button key={record.id} onClick={() => setSelected(record)} className={`w-full text-left p-4 hover:bg-[#f8f9ff] ${selected?.id === record.id ? 'bg-[#eff4ff]' : ''}`}>
                   <p className="text-sm font-bold">{record.diagnosis ?? record.reason ?? 'Untitled record'}</p>
-                  <p className="text-xs text-[#45464d] mt-1">Patient #{record.patient_id} · Doctor #{record.doctor_id}</p>
+                  <p className="text-xs text-[#45464d] mt-1">Patient #{record.patient_id} | Doctor #{record.doctor_id}</p>
                   <p className="text-[10px] text-[#45464d] mt-1">{record.created_at ? new Date(record.created_at).toLocaleString() : record.date}</p>
                 </button>
               ))}
@@ -124,7 +124,7 @@ export default function MedicalRecordsPage() {
             Doctor
             <select value={form.doctor_id || ''} onChange={(event) => setForm({ ...form, doctor_id: Number(event.target.value) })} className="mt-1 w-full h-10 px-3 rounded-lg border border-[#c6c6cd] text-sm" required>
               <option value="">Select doctor</option>
-              {doctors.map((doctor) => <option key={doctor.id} value={doctor.id}>Doctor #{doctor.id} · {doctor.specialization}</option>)}
+              {doctors.map((doctor) => <option key={doctor.id} value={doctor.id}>Doctor #{doctor.id} | {doctor.specialization}</option>)}
             </select>
           </label>
           <TextArea label="Diagnosis" value={form.diagnosis} onChange={(diagnosis) => setForm({ ...form, diagnosis })} />

@@ -100,8 +100,8 @@ export const initialLogs: ActivityLog[] = [
   },
   {
     id: 'log-2',
-    title: 'Server maintenance completed',
-    meta: 'System Engine Upgrade',
+    title: 'Care platform maintenance completed',
+    meta: 'Clinical workspace refreshed',
     time: '14m ago',
     type: 'system'
   },
@@ -142,7 +142,7 @@ export const initialStaff: StaffMember[] = [
     id: 'staff-3',
     name: 'Mark Kovacs',
     email: 'm.kovacs@mednexus.com',
-    role: 'IT Administrator',
+    role: 'Operations Coordinator',
     status: 'Away',
     avatarInitials: 'MK'
   }

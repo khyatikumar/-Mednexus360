@@ -43,7 +43,7 @@ export default function DoctorDashboard({
   };
 
   const handleFinishConsultation = () => {
-    alert("Consultation files securely signed with AES-256 and synchronized with Patient Health Care record!");
+    alert("Consultation notes signed and added to the patient's care record.");
     setActiveConsultation(null);
   };
 

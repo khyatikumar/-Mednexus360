@@ -111,7 +111,7 @@ export default function DoctorsPage({ canMutate }: { canMutate: boolean }) {
     <div className="space-y-6">
       <header>
         <h2 className="text-3xl font-bold">Doctors</h2>
-        <p className="text-sm text-[#45464d]">Live data from `/doctors/`.</p>
+        <p className="text-sm text-[#45464d]">Manage clinician specialties, consultation hours, fees, and hospital assignments.</p>
       </header>
       <Banner error={error} success={success} />
       <div className="grid xl:grid-cols-[1fr_380px] gap-6">
@@ -180,7 +180,7 @@ export default function DoctorsPage({ canMutate }: { canMutate: boolean }) {
                 <option value="">Select hospital</option>
                 {hospitals.map((hospital) => (
                   <option key={hospital.id} value={hospital.id}>
-                    #{hospital.id} · {hospital.name}
+                    Hospital #{hospital.id} | {hospital.name}
                   </option>
                 ))}
               </select>

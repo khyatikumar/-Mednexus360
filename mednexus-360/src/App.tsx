@@ -163,7 +163,7 @@ export default function App() {
             <div className="min-w-0">
               <h1 className="text-lg font-bold truncate">{activePage}</h1>
               <p className="text-xs text-[#45464d] truncate">
-                Signed in as {user.email} · {roleLabel[user.role]}
+                Signed in as {user.email} | {roleLabel[user.role]}
               </p>
             </div>
           </div>
@@ -261,8 +261,8 @@ function Dashboard({ user, onNavigate }: { user: CurrentUser; onNavigate: (page:
         <p className="text-xs font-bold uppercase tracking-wider text-[#0051d5]">{roleLabel[user.role]} Workspace</p>
         <h2 className="text-3xl font-bold mt-2">Welcome to MedNexus 360</h2>
         <p className="text-sm text-[#45464d] mt-2 max-w-2xl">
-          Your frontend is now connected to the FastAPI backend. Use the modules below to call live
-          endpoints with the JWT stored from `/auth/login`.
+          Coordinate appointments, records, reports, care teams, and patient communication from one
+          secure clinical workspace.
         </p>
       </section>
 
@@ -277,7 +277,7 @@ function Dashboard({ user, onNavigate }: { user: CurrentUser; onNavigate: (page:
             >
               <span className="material-symbols-outlined text-[#0051d5]">{action.icon}</span>
               <p className="font-bold mt-3">{action.label}</p>
-              <p className="text-xs text-[#45464d] mt-1">Open live backend workflow</p>
+              <p className="text-xs text-[#45464d] mt-1">Continue this care workflow</p>
             </button>
           ))}
       </section>

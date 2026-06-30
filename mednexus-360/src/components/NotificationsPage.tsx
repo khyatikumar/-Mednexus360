@@ -50,7 +50,7 @@ export default function NotificationsPage({ userId }: { userId: number }) {
       <header className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
           <h2 className="text-3xl font-bold">Notifications</h2>
-          <p className="text-sm text-[#45464d]">{unreadCount} unread notifications for user #{userId}.</p>
+          <p className="text-sm text-[#45464d]">{unreadCount} unread care updates for your profile.</p>
         </div>
         <button onClick={markAll} disabled={!unreadCount} className="h-10 px-4 bg-[#0051d5] text-white rounded-lg text-xs font-bold disabled:opacity-40">Mark All Read</button>
       </header>

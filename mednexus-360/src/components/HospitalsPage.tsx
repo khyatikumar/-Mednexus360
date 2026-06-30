@@ -71,7 +71,7 @@ export default function HospitalsPage({ canMutate }: { canMutate: boolean }) {
     <div className="space-y-6">
       <header>
         <h2 className="text-3xl font-bold">Hospitals</h2>
-        <p className="text-sm text-[#45464d]">Live data from `/hospitals/`.</p>
+        <p className="text-sm text-[#45464d]">Browse partner hospitals, locations, ratings, and care network coverage.</p>
       </header>
       {(error || notice) && <div className={`p-3 rounded-lg border text-sm font-semibold ${error ? 'bg-red-50 border-red-200 text-red-700' : 'bg-emerald-50 border-emerald-200 text-emerald-800'}`}>{error ?? notice}</div>}
       <div className="grid xl:grid-cols-[1fr_360px] gap-6">
