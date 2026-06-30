@@ -5,17 +5,18 @@ from urllib.request import Request, urlopen
 from app.core.config import settings
 
 
-GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions"
-GROQ_MODEL = "llama-3.1-8b-instant"
+MISTRAL_API_URL = "https://api.mistral.ai/v1/chat/completions"
+MISTRAL_MODEL = "mistral-small-latest"
 
 
 def _create_chat_completion(
     prompt: str,
     temperature: float
 ) -> str:
+
     payload = json.dumps(
         {
-            "model": GROQ_MODEL,
+            "model": MISTRAL_MODEL,
             "messages": [
                 {
                     "role": "user",
@@ -27,10 +28,10 @@ def _create_chat_completion(
     ).encode("utf-8")
 
     request = Request(
-        GROQ_API_URL,
+        MISTRAL_API_URL,
         data=payload,
         headers={
-            "Authorization": f"Bearer {settings.GROQ_API_KEY}",
+            "Authorization": f"Bearer {settings.MISTRAL_API_KEY}",
             "Content-Type": "application/json"
         },
         method="POST"
@@ -45,7 +46,7 @@ def _create_chat_completion(
     except HTTPError as exc:
         error_detail = exc.read().decode("utf-8")
         raise RuntimeError(
-            f"Groq API request failed: {error_detail}"
+            f"Mistral API request failed: {error_detail}"
         ) from exc
 
     return response_data["choices"][0]["message"]["content"]
@@ -88,6 +89,7 @@ Return JSON only.
     )
 
     return json.loads(result)
+
 
 def get_specialist(
     symptoms: str
