@@ -15,12 +15,17 @@ from app.schemas.report import ReportResponse
 
 import shutil
 import os
+import uuid
 
 
 router = APIRouter(
     prefix="/reports",
     tags=["Reports"]
 )
+
+# Create uploads directory if it doesn't exist
+UPLOAD_DIR = "uploads"
+os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 
 @router.post(
@@ -45,8 +50,12 @@ def upload_report(
             detail="Patient not found"
         )
 
-    file_path = (
-        f"uploads/{file.filename}"
+    # Generate a unique filename
+    unique_filename = f"{uuid.uuid4()}_{file.filename}"
+
+    file_path = os.path.join(
+        UPLOAD_DIR,
+        unique_filename
     )
 
     with open(
@@ -61,8 +70,8 @@ def upload_report(
 
     report = Report(
         patient_id=patient_id,
-        report_name=file.filename,
-        file_path=file_path
+        report_name=file.filename,   # Original filename shown to users
+        file_path=file_path          # Actual stored path
     )
 
     db.add(report)
