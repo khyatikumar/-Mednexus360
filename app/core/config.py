@@ -6,7 +6,7 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     ALGORITHM: str
     ACCESS_TOKEN_EXPIRE_MINUTES: int
-    GROQ_API_KEY:str
+ MISTRAL_API_KEY:str
 
     class Config:
         env_file = ".env"
